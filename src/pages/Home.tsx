@@ -1,10 +1,19 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import { 
-  Droplet, Shield, Heart, Sparkles, Leaf, Waves, 
-  Phone, MessageCircle, CheckCircle, Filter, ArrowRight 
-} from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import {
+  Droplet,
+  Shield,
+  Heart,
+  Sparkles,
+  Leaf,
+  Waves,
+  Phone,
+  MessageCircle,
+  CheckCircle,
+  Filter,
+  ArrowRight,
+} from "lucide-react";
 
 interface BenefitProps {
   icon: any;
@@ -36,7 +45,7 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
           }
@@ -45,67 +54,94 @@ export default function Home() {
       { threshold: 0.1 }
     );
 
-    const sections = document.querySelectorAll('.scroll-animate');
-    sections.forEach(section => observer.observe(section));
+    const sections = document.querySelectorAll(".scroll-animate");
+    sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
   }, []);
 
   const benefits = [
-    { icon: Heart, title: 'Enhanced Hydration', description: 'Smaller water molecules for better cellular absorption' },
-    { icon: Sparkles, title: 'pH Balance', description: 'Alkaline water (pH 8.5-10) supports body alkalinity' },
-    { icon: Leaf, title: 'Rich in Minerals', description: 'Essential minerals from volcanic stone layers' },
-    { icon: Shield, title: 'Antioxidant Properties', description: 'Negative ORP for oxidative stress reduction' },
+    {
+      icon: Heart,
+      title: "Enhanced Hydration",
+      description: "Smaller water molecules for better cellular absorption",
+    },
+    {
+      icon: Sparkles,
+      title: "pH Balance",
+      description: "Alkaline water (pH 8.5-10) supports body alkalinity",
+    },
+    {
+      icon: Leaf,
+      title: "Rich in Minerals",
+      description: "Essential minerals from volcanic stone layers",
+    },
+    {
+      icon: Shield,
+      title: "Antioxidant Properties",
+      description: "Negative ORP for oxidative stress reduction",
+    },
   ];
 
   const products: Product[] = [
     {
       title: "Alkaline Water Purifier",
-      description: "Transform ordinary water into mineral-rich alkaline wellness water",
+      description:
+        "Transform ordinary water into mineral-rich alkaline wellness water",
       image: "/images/Alkaline.png",
-      link: "/products#alkaline"
+      link: "/products#alkaline",
     },
     {
       title: "RO Water Purifier",
       description: "Advanced reverse osmosis with mineral retention technology",
       image: "/images/RO.jpg",
-      link: "/products#ro"
+      link: "/products#ro",
     },
     {
       title: "Water Softener",
       description: "Whole-home solution for hard water problems",
       image: "/images/softener.png",
-      link: "/products#softener"
-    }
+      link: "/products#softener",
+    },
   ];
 
   return (
     <>
       <Helmet>
         <title>Nature Hydrovation - Premium Water Treatment Solutions</title>
-        <meta 
-          name="description" 
+        <meta
+          name="description"
           content="Experience water as nature intended with our premium alkaline water purifiers and treatment systems. Transform your hydration with volcanic mineral technology."
         />
-        <meta 
-          name="keywords" 
+        <meta
+          name="keywords"
           content="water purifier, alkaline water, water treatment, mineral water, water softener, hydration, wellness"
         />
-        <meta property="og:title" content="Nature Hydrovation - Premium Water Treatment Solutions" />
-        <meta property="og:description" content="Experience water as nature intended with our premium water treatment solutions." />
+        <meta
+          property="og:title"
+          content="Nature Hydrovation - Premium Water Treatment Solutions"
+        />
+        <meta
+          property="og:description"
+          content="Experience water as nature intended with our premium water treatment solutions."
+        />
         <meta property="og:image" content="/images/home.jpg" />
       </Helmet>
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section 
+        <section
           className={`relative py-24 sm:py-32 lg:py-48 min-h-[70vh] lg:min-h-[80vh] px-4 sm:px-6 lg:px-8 
                     text-white overflow-hidden flex items-center justify-center text-center
-                    ${!bgLoaded ? 'bg-gradient-to-br from-cyan-600 to-teal-700' : ''}`}
+                    ${
+                      !bgLoaded
+                        ? "bg-gradient-to-br from-cyan-600 to-teal-700"
+                        : ""
+                    }`}
           style={{
             backgroundImage: `url(/images/home.jpg)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
           }}
         >
           <img
@@ -115,26 +151,27 @@ export default function Home() {
             onLoad={() => setBgLoaded(true)}
           />
           <div className="absolute inset-0 bg-gray-900 opacity-30"></div>
-          
+
           <div className="relative z-10 max-w-5xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-8">
               Pure Water, <br />
               <span className="text-green-400">Pure Life</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-gray-100">
-              Experience water as nature intended with our premium alkaline water purifiers
-              and treatment systems.
+              Experience water as nature intended with our premium alkaline
+              water purifiers and treatment systems.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-semibold rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-white text-cyan-700 font-semibold rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
               >
                 Explore Products
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-700 transition-all border-2 border-white/20"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-700 transition-all border-2 border-white/20"
               >
                 Contact Us
               </Link>
@@ -156,11 +193,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product, index) => (
-                <Link 
-                  key={index}
-                  to={product.link}
-                  className="group"
-                >
+                <Link key={index} to={product.link} className="group">
                   <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="aspect-w-16 aspect-h-9 bg-gray-100">
                       <img
@@ -170,7 +203,9 @@ export default function Home() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{product.title}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        {product.title}
+                      </h3>
                       <p className="text-gray-600">{product.description}</p>
                     </div>
                   </div>
@@ -191,19 +226,28 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
                     <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Japanese volcanic mineral technology for superior water quality</p>
+                    <p className="text-gray-600">
+                      Japanese volcanic mineral technology for superior water
+                      quality
+                    </p>
                   </div>
                   <div className="flex items-start space-x-4">
                     <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Certified by international health and safety standards</p>
+                    <p className="text-gray-600">
+                      Certified by international health and safety standards
+                    </p>
                   </div>
                   <div className="flex items-start space-x-4">
                     <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Professional installation and maintenance service</p>
+                    <p className="text-gray-600">
+                      Professional installation and maintenance service
+                    </p>
                   </div>
                   <div className="flex items-start space-x-4">
                     <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">24/7 customer support and satisfaction guarantee</p>
+                    <p className="text-gray-600">
+                      24/7 customer support and satisfaction guarantee
+                    </p>
                   </div>
                 </div>
               </div>
@@ -226,7 +270,8 @@ export default function Home() {
                 Health Benefits at a Glance
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Experience the difference that properly mineralized alkaline water makes in your daily wellness routine.
+                Experience the difference that properly mineralized alkaline
+                water makes in your daily wellness routine.
               </p>
             </div>
 
@@ -250,7 +295,8 @@ export default function Home() {
               Ready to Transform Your Water?
             </h2>
             <p className="text-xl mb-8 text-cyan-50">
-              Schedule a free consultation with our water wellness experts today.
+              Schedule a free consultation with our water wellness experts
+              today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -273,7 +319,7 @@ export default function Home() {
         {/* Scroll to Top Button */}
         {isVisible && (
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="fixed bottom-8 right-8 p-3 bg-cyan-600 text-white rounded-full shadow-lg hover:bg-cyan-700 transition-colors"
             aria-label="Scroll to top"
           >

@@ -2,71 +2,69 @@ import { Link } from 'react-router-dom';
 import { Droplet, Shield, Heart, Sparkles, Leaf, Waves, Phone, MessageCircle, CheckCircle, Filter, ArrowRight } from 'lucide-react';
 
 export default function Home() {
-  const benefits = [
-    { icon: Heart, title: 'Enhanced Hydration', description: 'Smaller water molecules for better cellular absorption' },
-    { icon: Sparkles, title: 'pH Balance', description: 'Alkaline water (pH 8.5-10) supports body alkalinity' },
-    { icon: Leaf, title: 'Rich in Minerals', description: 'Essential minerals from volcanic stone layers' },
-    { icon: Shield, title: 'Antioxidant Properties', description: 'Negative ORP for oxidative stress reduction' },
-  ];
+  const benefits = [
+    { icon: Heart, title: 'Enhanced Hydration', description: 'Smaller water molecules for better cellular absorption' },
+    { icon: Sparkles, title: 'pH Balance', description: 'Alkaline water (pH 8.5-10) supports body alkalinity' },
+    { icon: Leaf, title: 'Rich in Minerals', description: 'Essential minerals from volcanic stone layers' },
+    { icon: Shield, title: 'Antioxidant Properties', description: 'Negative ORP for oxidative stress reduction' },
+  ];
 
-  const keyFacts = [
-    'pH Range: 8.5 - 10.0',
-    'Volcanic Mineral Enrichment',
-    'Japanese Health Certified',
-    'Multi-Layer Filtration',
-  ];
+  // The keyFacts array will no longer be used in the hero, but we'll keep it for now in case it's needed elsewhere.
+  const keyFacts = [
+    'pH Range: 8.5 - 10.0',
+    'Volcanic Mineral Enrichment',
+    'Japanese Health Certified',
+    'Multi-Layer Filtration',
+  ];
 
-  return (
-    <div className="min-h-screen">
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-teal-50 to-blue-50 -z-10"></div>
-        <div className="absolute inset-0 opacity-10 -z-10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+  return (
+    <div className="min-h-screen">
+      {/* 🚀 HERO BANNER SECTION - With Background Image and Mobile Optimization */}
+      <section 
+        className="relative 
+                    **py-24 sm:py-32 lg:py-48** **min-h-[70vh] lg:min-h-[80vh]** px-4 sm:px-6 lg:px-8 
+                    **text-white** overflow-hidden flex items-center justify-center text-center" // Added text-white and justify-center/text-center
+        style={{
+          backgroundImage: 'url(/images/home.jpg)', // Your new hero image
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+        }}
+      >
+        {/* Dark Overlay for Readability */}
+        <div className="absolute inset-0 bg-gray-900 opacity-30"></div> {/* Increased opacity for better text contrast */}
+        
+       <div className="relative max-w-4xl mx-auto z-10"> {/* Centered content */}
+          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+            Experience Water
+            <span> {/* text-white is no longer needed here as it's inherited from the h1 */}
+              Nature Intended
+            </span>
+          </h1>
 
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            
+          <p className="text-xl text-gray-200 mb-8 leading-relaxed" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}> {/* Adjusted text color for white background */}
+            Discover the transformative power of mineral-rich alkaline water enhanced with volcanic stone technology.
+            Not just purification—true water wellness.
+          </p>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Experience Water
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600">
-                Nature Intended
-              </span>
-            </h1>
-
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Discover the transformative power of mineral-rich alkaline water enhanced with volcanic stone technology.
-              Not just purification—true water wellness.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Contact Us for Expert Guidance
-              </Link>
-              <Link
-                to="/technology"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-50 transition-all border-2 border-gray-200"
-              >
-                Learn About Our Technology
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {keyFacts.map((fact, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center transform hover:scale-105 transition-transform">
-                <CheckCircle className="h-8 w-8 text-teal-600 mx-auto mb-2" />
-                <p className="text-sm font-semibold text-gray-800">{fact}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              Contact Us for Expert Guidance
+            </Link>
+            <Link
+              to="/technology"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-50 transition-all border-2 border-gray-200"
+            >
+              Learn About Our Technology
+            </Link>
+          </div>
+        </div>
+        
+        {/* *** REMOVED THE KEY FACTS CARDS HERE *** */}
+      </section> 
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">

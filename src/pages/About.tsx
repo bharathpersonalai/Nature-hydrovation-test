@@ -52,26 +52,34 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-teal-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-cyan-100 text-cyan-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Award className="h-4 w-4" />
-              <span>Trusted Water Wellness Partner</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              About
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600">
-                Nature Hydrovation
-              </span>
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              We're not just water purifier suppliers—we're pioneers in water wellness,
-              dedicated to transforming health through superior alkaline mineral water technology.
-            </p>
-          </div>
+     {/* 🏞️ Consistent Hero Section with 'style' Prop */}
+      <section
+        className="relative py-24 sm:py-32 lg:py-48 **min-h-[50vh] lg:min-h-[70vh]** px-4 sm:px-6 lg:px-8 text-white overflow-hidden flex items-center"
+        style={{
+          // Use your 'home.jpg' path here
+          backgroundImage: 'url(/images/5.jpg)', 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Gradient Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-cyan-900/20"></div>
+
+        {/* Text Content */}
+        <div className="max-w-7xl mx-auto text-center relative z-10 text-white">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
+            About
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-300">
+              Nature Hydrovation
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl font-medium max-w-3xl mx-auto drop-shadow-md">
+            We're not just water purifier suppliers—we're pioneers in water wellness,
+            dedicated to transforming health through superior alkaline mineral water technology.
+          </p>
         </div>
       </section>
+      {/* --- MODIFIED HERO SECTION END --- */}
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">

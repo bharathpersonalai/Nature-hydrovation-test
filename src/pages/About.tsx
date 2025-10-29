@@ -56,14 +56,14 @@ export default function About() {
       <section
         className="relative py-24 sm:py-32 lg:py-48 **min-h-[50vh] lg:min-h-[70vh]** px-4 sm:px-6 lg:px-8 text-white overflow-hidden flex items-center"
         style={{
-          // Use your 'home.jpg' path here
+          // Use your 'about.jpg' path here
           backgroundImage: 'url(/images/5.jpg)', 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
         {/* Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-cyan-900/20"></div>
+        <div className="absolute inset-0 bg-gray-900 opacity-30" aria-hidden="true"></div>
 
         {/* Text Content */}
         <div className="max-w-7xl mx-auto text-center relative z-10 text-white">

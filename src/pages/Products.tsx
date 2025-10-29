@@ -6,7 +6,8 @@ export default function Products() {
     {
       id: 'alkaline-purifier',
       name: 'Alkaline Water Purifier',
-      icon: Droplet,
+      
+imageUrl: '/images/Alkaline.png',
       gradient: 'from-cyan-500 to-teal-600',
       tagline: 'Transform ordinary water into wellness',
       description: 'Our flagship alkaline water purification system uses 5-layer volcanic mineral technology to create mineral-rich, pH-balanced water that revitalizes your body.',
@@ -38,7 +39,7 @@ export default function Products() {
     {
       id: 'ro-purifier',
       name: 'RO Water Purifier',
-      icon: Filter,
+      imageUrl: '/images/RO.jpg',
       gradient: 'from-blue-500 to-cyan-600',
       tagline: 'Pure, safe water for every need',
       description: 'Advanced Reverse Osmosis technology combined with mineral cartridges ensures your water is both pure and healthy, removing all harmful contaminants while retaining essential minerals.',
@@ -70,7 +71,7 @@ export default function Products() {
     {
       id: 'water-softener',
       name: 'Water Softener System',
-      icon: Waves,
+      imageUrl: '/images/softener.png',
       gradient: 'from-teal-500 to-green-600',
       tagline: 'Protect your home, prolong appliance life',
       description: 'Our advanced water softening system removes hardness-causing minerals, protecting your appliances, plumbing, and giving you softer skin and hair.',
@@ -103,74 +104,78 @@ export default function Products() {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* 🚀 NEW HERO BANNER SECTION */}
+      {/* 🚀 HERO BANNER SECTION - Corrected Gap Logic */}
       <section 
-        className="relative py-32 px-4 sm:px-6 lg:px-8 text-white overflow-hidden" 
+        className="relative **py-24** sm:py-32 lg:py-48 **min-h-[50vh]** lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 text-white overflow-hidden flex items-center"
         style={{ 
           backgroundImage: 'url(/images/6.jpg)', 
           backgroundSize: 'cover', 
           backgroundPosition: 'center',
         }}
       >
-        {/* Dark Overlay for Readability (opacity-70 with shadow for contrast) */}
-        <div className="absolute inset-0 bg-gray-900 opacity-50"></div>
+        {/* Dark Overlay for Readability */}
+        <div className="absolute inset-0 bg-gray-900 opacity-20"></div>
         
-        <div className="relative max-w-7xl mx-auto z-10">
-          <div className="text-center mb-16">
-            {/* Removed the small pill icon/text for a cleaner hero look */}
-            
+       {/* IMPORTANT: Removed justify-between. Now using flex-grow to push content down. */}
+       <div className="relative max-w-7xl mx-auto z-10 w-full h-full flex flex-col items-start text-left">
+          
+          {/* Top-left content: Now positioned using simple padding/margins */}
+          <div className="mt-8 lg:mt-0"> {/* Removed mb-32 and mb-auto */}
             <h1 
-              className="text-5xl md:text-7xl font-extrabold mb-6"
-              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }} // Added text shadow
+              className="text-4xl md:text-5xl font-extrabold mb-2 max-w-xl"
+              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
             >
               <span className="block">Our Water</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-300">
+              <span className="text-green-400">
                 Treatment Systems
               </span>
             </h1>
+          </div>
+
+          {/* *** NEW: This spacer div now controls the large gap between the H1 and the P tag. *** */}
+          {/* Change h-24 to h-32 or h-48 for more space. */}
+          <div className="h-16"></div> 
+          
+          {/* Bottom-left content: Now positioned using margin-top: auto (mt-auto) and mb-auto is not needed here. */}
+         <div className="mb-12 lg:mb-0 max-w-2xl"> {/* Removed mt-auto */}
             <p 
-              className="text-xl text-gray-200 max-w-3xl mx-auto mt-4"
-              style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }} // Added text shadow
+              className="text-xl text-gray-200"
+              style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}
             >
               Choose from our range of certified water purification and softening systems,
               each designed to address specific water quality needs while promoting health and wellness.
             </p>
           </div>
-
-          {/* Product Summary Cards - Kept here to pop against the dark background */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto pt-8"> 
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all group cursor-pointer relative z-20"
-              >
-                <div className={`bg-gradient-to-br ${product.gradient} w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <product.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                <p className="text-sm text-gray-600">{product.tagline}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        </div> 
       </section>
 
+      {/* Product Detail Sections (Unchanged) */}
       {products.map((product, index) => (
         <section
           key={product.id}
           className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-white' : 'bg-gradient-to-br from-gray-50 to-cyan-50'}`}
         >
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className={`bg-gradient-to-br ${product.gradient} w-20 h-20 rounded-2xl flex items-center justify-center mb-6`}>
-                  <product.icon className="h-10 w-10 text-white" />
-                </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-start"> {/* Changed items-center to items-start for top alignment */}
+              
+                {/* COLUMN 1: IMAGE + PRODUCT INFO & BENEFITS + IDEAL FOR */}
+              <div className={`flex flex-col ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                
+                    {/* *** PRODUCT IMAGE (3:4 Ratio) *** */}
+                    <div className="w-full **aspect-[3/4]** rounded-2xl overflow-hidden shadow-2xl mb-8"> {/* Adjusted mb- for better spacing */}
+                        <img 
+                            src={product.imageUrl} 
+                            alt={product.name} 
+                            className="w-full h-full object-cover" 
+                        />
+                    </div>
+                    {/* *** END IMAGE BLOCK *** */}
+                    
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">{product.name}</h2>
                 <p className="text-xl text-gray-600 mb-6 italic">{product.tagline}</p>
                 <p className="text-gray-700 leading-relaxed mb-8">{product.description}</p>
 
-                <div className="space-y-6">
+                <div className="space-y-6 mt-4"> {/* Added mt-4 for slight separation from description */}
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                       <Zap className="h-5 w-5 text-cyan-600 mr-2" />
@@ -186,7 +191,7 @@ export default function Products() {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="mt-6"> {/* Added mt-6 for separation */}
                     <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                       <Shield className="h-5 w-5 text-cyan-600 mr-2" />
                       Ideal For

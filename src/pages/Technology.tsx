@@ -97,7 +97,7 @@ export default function Technology() {
       
       {/* 🚀 Hero Section - Adjusted overlay and added text shadow */}
       <section 
-        className="relative py-32 px-4 sm:px-6 lg:px-8 text-white overflow-hidden" 
+        className="relative **py-24 sm:py-32 lg:py-48** **min-h-[50vh] lg:min-h-[70vh]** px-4 sm:px-6 lg:px-8 text-white overflow-hidden flex items-center"
         style={{ 
           backgroundImage: 'url(/images/15.jpg)', 
           backgroundSize: 'cover', 
@@ -105,7 +105,7 @@ export default function Technology() {
         }}
       >
         {/* Dark Overlay for Readability - INCREASED OPACITY */}
-        <div className="absolute inset-0 bg-gray-900 opacity-50"></div> {/* Changed from opacity-60 to opacity-70 */}
+        <div className="absolute inset-0 bg-gray-900 opacity-20"></div> {/* Changed from opacity-60 to opacity-70 */}
         
         {/* Content div to sit above the overlay */}
         <div className="relative max-w-7xl mx-auto z-10">
@@ -115,7 +115,7 @@ export default function Technology() {
               style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }} // ADDED TEXT SHADOW
             >
               <span className="block">The Science Behind</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-300">
+              <span className="text-green-300">
                 Pure Mineral Water
               </span>
             </h1>

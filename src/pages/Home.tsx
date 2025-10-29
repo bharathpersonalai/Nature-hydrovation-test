@@ -162,16 +162,16 @@ export default function Home() {
               water purifiers and treatment systems.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 to="/products"
-                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-white text-cyan-700 font-semibold rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-base bg-white text-cyan-700 font-semibold rounded-lg sm:rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg w-auto sm:w-auto mx-4 sm:mx-0"
               >
                 Explore Products
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-700 transition-all border-2 border-white/20"
+                className="inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-base bg-cyan-600 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-cyan-700 transition-all border border-white/20 w-auto sm:w-auto mx-4 sm:mx-0"
               >
                 Contact Us
               </Link>
@@ -298,17 +298,17 @@ export default function Home() {
               Schedule a free consultation with our water wellness experts
               today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 font-semibold rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-base bg-white text-cyan-700 font-semibold rounded-lg sm:rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg w-auto sm:w-auto mx-4 sm:mx-0"
               >
                 Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
               <Link
                 to="/technology"
-                className="inline-flex items-center justify-center px-8 py-4 bg-cyan-800 text-white font-semibold rounded-xl hover:bg-cyan-900 transition-all border-2 border-white/20"
+                className="inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-base bg-cyan-800 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-cyan-900 transition-all border border-white/20 w-auto sm:w-auto mx-4 sm:mx-0"
               >
                 Learn More
               </Link>

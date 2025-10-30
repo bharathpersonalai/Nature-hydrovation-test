@@ -233,51 +233,7 @@ export default function Contact() {
                 <div className="bg-cyan-50 rounded-lg p-4 text-sm text-cyan-900">
                   <strong>Note:</strong> Emergency support available 24/7 for existing customers
                 </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-cyan-600 to-teal-700 rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-4">Why Choose Us?</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <span>Japanese Health Authority Certified</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <span>Expert Installation & Maintenance</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <span>Premium Volcanic Mineral Technology</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <span>15+ Years of Trusted Service</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-cyan-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Follow Our Journey
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Stay connected for water wellness tips, customer stories, and product updates
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <div className="bg-cyan-100 text-cyan-800 px-6 py-3 rounded-full font-medium">
-              #Refresh_Replenish_Rejoice
-            </div>
-            <div className="bg-teal-100 text-teal-800 px-6 py-3 rounded-full font-medium">
-              #kazannoro
-            </div>
-            <div className="bg-blue-100 text-blue-800 px-6 py-3 rounded-full font-medium">
-              #NatureHydrovation
+              </div> 
             </div>
           </div>
         </div>

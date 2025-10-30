@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import {CircularGallery}  from "../components/CircularGallery";  
 import {
   Droplet,
   Shield,
@@ -41,18 +42,55 @@ const BenefitCard = ({ icon: Icon, title, description }: BenefitProps) => (
 export default function Home() {
   const [bgLoaded, setBgLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-
+const galleryItems = [
+  {
+    image: "/images/acce.png", // Replace with your image
+    text: "Our Technology",
+  },
+  {
+    image: "/images/K2.png", // Replace with your image
+    text: "Alkaline Purifier",
+  },
+  {
+    image: "/images/R1.png", // Replace with your image
+    text: "Alkaline Purifier",
+  },
+  {
+    image: "/images/R2.png", // Replace with your image
+    text: "Alkaline Purifier",
+  },
+  {
+    image: "/images/R3.png", // Replace with your image
+    text: "Alkaline Purifier",
+  },
+  {
+    image: "/images/RO2.png", // Replace with your image
+    text: "Alkaline Purifier",
+  },
+  {
+    image: "/images/gm.png", // Replace with your image
+    text: "Alkaline Purifier",
+  },
+  // ... add as many as you like
+];
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // This part is for your scroll-to-top button
+            setIsVisible(true);
+
+            // *** ADD THIS LINE: This triggers the animation ***
+            entry.target.classList.add('is-visible');
+            
+            // *** ADD THIS LINE: This stops observing it after it's visible ***
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
     const sections = document.querySelectorAll(".scroll-animate");
     sections.forEach((section) => observer.observe(section));
@@ -94,13 +132,13 @@ export default function Home() {
     {
       title: "RO Water Purifier",
       description: "Advanced reverse osmosis with mineral retention technology",
-      image: "/images/RO.jpg",
+      image: "/images/K1.png",
       link: "/products#ro",
     },
     {
       title: "Water Softener",
       description: "Whole-home solution for hard water problems",
-      image: "/images/softener.png",
+      image: "/images/poly.png",
       link: "/products#softener",
     },
   ];
@@ -128,7 +166,7 @@ export default function Home() {
         <meta property="og:image" content="/images/home.jpg" />
       </Helmet>
 
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-white"> 
         {/* Hero Section */}
         <section
           className={`relative py-24 sm:py-32 lg:py-48 min-h-[70vh] lg:min-h-[80vh] px-4 sm:px-6 lg:px-8 
@@ -195,7 +233,7 @@ export default function Home() {
               {products.map((product, index) => (
                 <Link key={index} to={product.link} className="group">
                   <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="aspect-w-16 aspect-h-9 bg-gray-100">
+                    <div className="h-72 bg-gray-100">
                       <img
                         src={product.image}
                         alt={product.title}
@@ -214,79 +252,94 @@ export default function Home() {
             </div>
           </div>
         </section>
+{/* 🚀 NEW: GALLERY SECTION (Placed after "Our Solutions") 🚀 */}
+        <section
+  className="py-20 overflow-hidden scroll-animate relative" // Added 'relative'
+  style={{
+    backgroundImage: `url('/images/13.jpg')`, // Your image path
+    backgroundSize: 'cover', // Ensures image covers the section
+    backgroundPosition: 'center', // Centers the image
+  }}
+>
+  {/* Optional: Add an overlay for better text readability */}
+  <div className="absolute inset-0 bg-gray-900 opacity-30"></div> 
+  {/* All your existing content will go here, after the overlay */}
 
+  <div className="max-w-7xl mx-auto text-center mb-16 px-4 relative z-10"> {/* Added 'relative z-10' */}
+    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      Our Gallery
+    </h2>
+    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+      Explore different styles for your home.
+    </p>
+  </div>
+
+  {/* Your CircularGallery component */}
+  <CircularGallery
+    items={galleryItems}
+    bend={-10}
+    scrollSpeed={2}
+    scrollEase={0.05}
+    textColor={"#ffffff"}
+    borderRadius={0.05}
+  />
+</section>
+        {/* 🚀 END: GALLERY SECTION 🚀 */}
         {/* About Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-cyan-50 scroll-animate">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  Why Choose Nature Hydrovation?
-                </h2>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">
-                      Japanese volcanic mineral technology for superior water
-                      quality
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">
-                      Certified by international health and safety standards
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">
-                      Professional installation and maintenance service
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">
-                      24/7 customer support and satisfaction guarantee
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <img
-                  src="/images/about.jpg"
-                  alt="Water purification system"
-                  className="rounded-2xl shadow-2xl"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+       {/* About Section (Why Choose) */}
+        <section
+          className="relative min-h-[95vh] py-24 px-4 sm:px-6 lg:px-8" /* <-- REMOVED scroll-animate */
+          style={{
+            backgroundImage: `url('/images/about.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+          }}
+        >
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gray-900 opacity-55"></div>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-animate">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Health Benefits at a Glance
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Experience the difference that properly mineralized alkaline
-                water makes in your daily wellness routine.
-              </p>
-            </div>
+          <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+              {/* Left content */}
+              <div>
+                <h2 className="text-4xl font-bold text-white mb-6 scroll-animate"> {/* <-- Use original slide-up animation */}
+                  Why Choose Nature Hydrovation?
+                </h2>
+                <div className="space-y-4">
+                  {/* Staggered list items */}
+                  <div className="flex items-start space-x-4 scroll-animate animate-slide-in-left" style={{ transitionDelay: '100ms' }}>
+                    <CheckCircle className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-1" />
+                    <p className="text-gray-200">
+                      Japanese volcanic mineral technology for superior water quality
+                    </p>
+                  </div>
+                  <div className="flex items-start space-x-4 scroll-animate animate-slide-in-left" style={{ transitionDelay: '200ms' }}>
+                    <CheckCircle className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-1" />
+                    <p className="text-gray-200">
+                      Certified by international health and safety standards
+                    </p>
+                  </div>
+                  <div className="flex items-start space-x-4 scroll-animate animate-slide-in-left" style={{ transitionDelay: '300ms' }}>
+                    <CheckCircle className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-1" />
+                    <p className="text-gray-200">
+                      Professional installation and maintenance service
+                    </p>
+                  </div>
+                <div className="flex items-start space-x-4 scroll-animate animate-slide-in-left" style={{ transitionDelay: '400ms' }}>
+                    <CheckCircle className="h-6 w-6 text-cyan-400 flex-shrink-0 mt-1" />
+                    <p className="text-gray-200">
+                    24/7 customer support and satisfaction guarantee
+                 </p>
+                  </div>
+                </div>
+              </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
-                <BenefitCard
-                  key={index}
-                  icon={benefit.icon}
-                  title={benefit.title}
-                  description={benefit.description}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+              {/* Right placeholder (which is invisible, so no animation needed) */}
+              <div className="hidden lg:block h-full"></div>
+            </div>
+          </div>
+        </section>
+
 
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-600 to-teal-700 text-white scroll-animate">

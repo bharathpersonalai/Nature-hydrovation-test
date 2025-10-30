@@ -6,7 +6,9 @@
   html {
     scroll-behavior: smooth;
   }
-
+  #root {
+  background-color: #ffffff;
+}
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -20,4 +22,35 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+/* For the fade-in-on-scroll animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Add these new animation styles */
+
+.animate-slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* This is the trigger class from your JS */
+.animate-slide-in-left.is-visible,
+.animate-slide-in-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }

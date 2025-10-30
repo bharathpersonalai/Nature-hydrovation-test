@@ -7,11 +7,13 @@ import Technology from './pages/Technology';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import ScrollToTop from "./components/ScrollToTop"; 
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <ScrollToTop /> 
+      <div className="min-h-screen bg-white"> 
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

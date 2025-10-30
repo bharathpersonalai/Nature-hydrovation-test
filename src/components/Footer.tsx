@@ -65,8 +65,6 @@ export default function Footer() {
               </a>
             </div>
             <div className="space-y-1">
-              <p className="text-xs text-gray-400">#Refresh_Replenish_Rejoice</p>
-              <p className="text-xs text-gray-400">#kazannoro</p>
             </div>
           </div>
         </div>

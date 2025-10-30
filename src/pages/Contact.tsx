@@ -201,16 +201,24 @@ export default function Contact() {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Nature Hydrovation<br />
-                      Gajularamaram<br />
+                      Shop no:4, 1st floor, Door no:02-128/1/A<br />
+                      Union Bank Opp Building, Gajularamaram<br />
                       Hyderabad, Telangana<br />
                       India
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-4 h-64 flex items-center justify-center text-gray-400 border-2 border-gray-200">
-                  <MapPin className="h-16 w-16" />
-                </div>
+               <div className="bg-white rounded-xl h-64 overflow-hidden border-2 border-gray-200">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!4v1761832072216!6m8!1m7!1s75YdgcBN5k9TI8YwCbk8GQ!2m2!1d17.52512465554164!2d78.42299460638385!3f218.35213727148806!4f18.394656038025303!5f0.7820865974627469" 
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">

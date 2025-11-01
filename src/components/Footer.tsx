@@ -19,15 +19,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-gradient-to-br from-cyan-500 to-teal-600 p-2 rounded-lg">
-                <Droplet className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-white font-bold">Nature Hydrovation</h3>
-                <p className="text-xs text-gray-400">Pure Wellness</p>
-              </div>
-            </div>
+            <div className="flex flex-col items-start mb-4">
+  <img
+    src="/images/nlogo.png" // 🟢 path to your logo file
+    alt="Nature Hydrovation Logo"
+    className="h-16 w-auto object-contain" // adjust height as needed
+  />
+</div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Trusted provider of alkaline water purifiers, RO systems, and
               water softeners with volcanic stone technology.

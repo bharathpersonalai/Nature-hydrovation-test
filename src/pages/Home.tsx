@@ -129,7 +129,7 @@ const galleryItems = [
     {
       title: "RO Water Purifier",
       description: "Advanced reverse osmosis with mineral retention technology",
-      image: "/images/K1.png",
+      image: "/images/K2.png",
       link: "/products#ro",
     },
     {

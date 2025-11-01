@@ -84,7 +84,7 @@ export const CircularGallery = ({
   const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDragging) return;
 
-    const dragSpeed = 3.5; // <-- We added this multiplier
+    const dragSpeed = 5; // <-- We added this multiplier
 
     const x = getEventX(e.nativeEvent);
     const deltaX = (x - startX) * dragSpeed; // <-- Apply the multiplier here

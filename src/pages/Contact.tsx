@@ -75,7 +75,7 @@ export default function Contact() {
   
   <div className="relative flex items-center justify-start h-full px-12 md:px-24">
     <h1 className="text-white text-5xl md:text-6xl font-bold drop-shadow-lg">
-      Contact Us
+      We are here to Help
     </h1>
   </div>
 </section>

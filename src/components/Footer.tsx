@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react"; 
+import { X } from "lucide-react";
 import {
   Droplet,
   Phone,
@@ -10,6 +12,8 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const [showCertificate, setShowCertificate] = useState(false); // ✅ properly typed 
+  
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -153,21 +157,55 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
-             {/* 🔹 GST Number */}
-  <p className="text-white font-bold text-sm mt-2">
-    GST: 36BGXPS2557L1ZD 
-  </p>
-            <div className="space-y-1"></div>
+              {/* 🔹 GST Number - Clickable */}
+            <button
+              onClick={() => setShowCertificate(true)}
+              className="text-white font-bold text-sm mt-2 underline hover:text-cyan-400 transition"
+            >
+              GST: 36BGXPS2557L1ZD
+            </button>
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Nature Hydrovation. All rights
-            reserved. 
+            © {new Date().getFullYear()} Nature Hydrovation. All rights reserved.
           </p>
         </div>
       </div>
+
+       {/* 🔹 GST Certificate Modal */}
+      {showCertificate && (
+        <div
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+          onClick={() => setShowCertificate(false)} // ✅ Close when clicking outside
+        >
+          <div
+            className="relative bg-white rounded-xl shadow-2xl p-6 max-w-md w-full mx-4"
+            onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowCertificate(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+              aria-label="Close"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+              GST Registration Certificate
+            </h2>
+
+            <img
+              src="/images/GST.jpg"
+              alt="GST Certificate"
+              className="rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      )}
     </footer>
   );
 }

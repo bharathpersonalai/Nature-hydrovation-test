@@ -355,17 +355,6 @@ export default function Technology() {
             </div>
           </div>
         </section>
-
-        {/* Scroll to Top Button */}
-        {isScrollVisible && (
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 p-3 bg-cyan-600 text-white rounded-full shadow-lg hover:bg-cyan-700 transition-colors"
-            aria-label="Scroll to top"
-          >
-            <ChevronUp className="h-6 w-6" />
-          </button>
-        )}
       </div>
     </>
   );

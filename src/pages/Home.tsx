@@ -13,7 +13,8 @@ import {
   MessageCircle,
   CheckCircle,
   Filter,
-  ArrowRight,
+  ArrowUp,
+  ArrowRight
 } from "lucide-react";
 
 interface BenefitProps {
@@ -44,31 +45,27 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 const galleryItems = [
   {
-    image: "/images/acce.png", // Replace with your image
+    image: "/images/test.png", // Replace with your image
     text: "Our Technology",
   },
   {
-    image: "/images/K2.png", // Replace with your image
+    image: "/images/test4.png", // Replace with your image
     text: "Alkaline Purifier",
   },
   {
-    image: "/images/R1.png", // Replace with your image
+    image: "/images/test2.png", // Replace with your image
     text: "Alkaline Purifier",
   },
   {
-    image: "/images/R2.png", // Replace with your image
+    image: "/images/test5.png", // Replace with your image
     text: "Alkaline Purifier",
   },
   {
-    image: "/images/R3.png", // Replace with your image
+    image: "/images/test3.png", // Replace with your image
     text: "Alkaline Purifier",
   },
   {
-    image: "/images/RO2.png", // Replace with your image
-    text: "Alkaline Purifier",
-  },
-  {
-    image: "/images/gm.png", // Replace with your image
+    image: "/images/test6.png", // Replace with your image
     text: "Alkaline Purifier",
   },
   // ... add as many as you like
@@ -262,7 +259,7 @@ const galleryItems = [
   }}
 >
   {/* Optional: Add an overlay for better text readability */}
-  <div className="absolute inset-0 bg-gray-900 opacity-30"></div> 
+  <div className="absolute inset-0 bg-gray-900 opacity-60"></div> 
   {/* All your existing content will go here, after the overlay */}
 
   <div className="max-w-7xl mx-auto text-center mb-16 px-4 relative z-10"> {/* Added 'relative z-10' */}
@@ -285,7 +282,7 @@ const galleryItems = [
   />
 </section>
         {/* 🚀 END: GALLERY SECTION 🚀 */}
-        {/* About Section */}
+  
        {/* About Section (Why Choose) */}
         <section
           className="relative min-h-[95vh] py-24 px-4 sm:px-6 lg:px-8" /* <-- REMOVED scroll-animate */
@@ -368,17 +365,6 @@ const galleryItems = [
             </div>
           </div>
         </section>
-
-        {/* Scroll to Top Button */}
-        {isVisible && (
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-8 right-8 p-3 bg-cyan-600 text-white rounded-full shadow-lg hover:bg-cyan-700 transition-colors"
-            aria-label="Scroll to top"
-          >
-            <ArrowRight className="h-6 w-6 transform rotate-270" />
-          </button>
-        )}
       </div>
     </>
   );

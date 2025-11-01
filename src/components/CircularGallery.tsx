@@ -84,7 +84,7 @@ export const CircularGallery = ({
   const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDragging) return;
 
-    const dragSpeed = 2.5; // <-- We added this multiplier
+    const dragSpeed = 3.5; // <-- We added this multiplier
 
     const x = getEventX(e.nativeEvent);
     const deltaX = (x - startX) * dragSpeed; // <-- Apply the multiplier here
@@ -128,7 +128,7 @@ export const CircularGallery = ({
             className="flex-none p-4 w-full lg:w-1/3" // Responsive width
           >
                        {" "}
-            <div className="relative group overflow-hidden bg-white rounded-2xl">
+            <div className="relative group overflow-hidden bg-white/10 rounded-2xl">
                            {" "}
               <img
                 src={item.image}

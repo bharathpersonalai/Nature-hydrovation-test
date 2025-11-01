@@ -1,12 +1,16 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send, Clock, CheckCircle } from 'lucide-react';
+import { useState } from "react";
+import "../components/Contact.css"; // keep your CSS file here
+import { FiPhone } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
+import { MapPin, Send, Clock, CheckCircle, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -16,11 +20,13 @@ export default function Contact() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', phone: '', email: '', message: '' });
+      setFormData({ name: "", phone: "", email: "", message: "" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -29,87 +35,98 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      icon: Phone,
-      title: 'Call Us',
-      info: '+91 99999 99999',
-      action: 'tel:+919999999999',
-      gradient: 'from-cyan-500 to-blue-500',
+      icon: <FiPhone size={22} color="#fff" />,
+      title: "Call Us",
+      info: "+91 79972 61499",
+      action: "tel:+917997261499",
+      color: "#007BFF",
     },
     {
-      icon: MessageCircle,
-      title: 'WhatsApp',
-      info: 'Chat with us instantly',
-      action: 'https://wa.me/919999999999',
-      gradient: 'from-green-500 to-emerald-500',
+      icon: <FaWhatsapp size={22} color="#fff" />,
+      title: "WhatsApp",
+      info: "Chat with us instantly",
+      action: "https://wa.me/917997261499",
+      color: "#25D366",
     },
     {
-      icon: Mail,
-      title: 'Email Us',
-      info: 'info@naturehydrovation.com',
-      action: 'mailto:info@naturehydrovation.com',
-      gradient: 'from-teal-500 to-cyan-500',
+      icon: <HiOutlineMail size={22} color="#fff" />,
+      title: "Email Us",
+      info: "naturehydrovation@gmail.com",
+      action: "mailto:naturehydrovation@gmail.com", 
+      color: "#00bcd4",
     },
   ];
 
   const businessHours = [
-    { day: 'Monday - Saturday', hours: '9:00 AM - 7:00 PM' },
-    { day: 'Sunday', hours: '10:00 AM - 5:00 PM' },
+    { day: "Monday - Saturday", hours: "9:00 AM - 7:00 PM" },
+    { day: "Sunday", hours: "10:00 AM - 5:00 PM" },
   ];
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-teal-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-cyan-100 text-cyan-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <MessageCircle className="h-4 w-4" />
-              <span>We're Here to Help</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Get in Touch
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600">
-                With Our Experts
-              </span>
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Have questions about alkaline water purification? Ready to transform your home's water quality?
-              We're here to guide you every step of the way.
-            </p>
-          </div>
-        </div>
-      </section>
+   {/* Hero Section */}
+<section
+  className="relative h-[90vh] bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url("/images/cc.png")`, // your image path
+  }}
+>
+  <div className="absolute inset-0 bg-black/40"></div> {/* subtle dark overlay */}
+  
+  <div className="relative flex items-center justify-start h-full px-12 md:px-24">
+    <h1 className="text-white text-5xl md:text-6xl font-bold drop-shadow-lg">
+      Contact Us
+    </h1>
+  </div>
+</section>
 
+
+
+      {/* Contact Cards */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {contactMethods.map((method, index) => (
-              <a
-                key={index}
-                href={method.action}
-                target={method.title === 'WhatsApp' ? '_blank' : undefined}
-                rel={method.title === 'WhatsApp' ? 'noopener noreferrer' : undefined}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all group"
-              >
-                <div className={`bg-gradient-to-br ${method.gradient} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  <method.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
-                <p className="text-gray-600">{method.info}</p>
-              </a>
-            ))}
+  <a
+    key={index}
+    href={method.action}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all group flex flex-col items-center text-center"
+  >
+    {/* Updated Icon Circle */}
+    <div
+      className="icon-circle mb-6 flex items-center justify-center"
+      style={{ backgroundColor: method.color }}
+    >
+      {method.icon}
+    </div>
+
+    <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+    <p className="text-gray-600">{method.info}</p>
+  </a>
+))}
+
           </div>
 
+          {/* Contact Form + Info */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left: Form */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Send Us a Message
+              </h2>
               <p className="text-gray-600 mb-8">
-                Fill out the form below and our water wellness experts will get back to you within 24 hours.
+                Fill out the form below and our water wellness experts will get
+                back to you within 24 hours.
               </p>
 
               {submitted ? (
                 <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-8 text-center">
                   <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-green-900 mb-2">Thank You!</h3>
+                  <h3 className="text-2xl font-bold text-green-900 mb-2">
+                    Thank You!
+                  </h3>
                   <p className="text-green-700">
                     We've received your message and will contact you shortly.
                   </p>
@@ -117,7 +134,10 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-semibold text-gray-900 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -133,7 +153,10 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-semibold text-gray-900 mb-2"
+                    >
                       Phone Number *
                     </label>
                     <input
@@ -149,7 +172,10 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-semibold text-gray-900 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -165,7 +191,10 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-semibold text-gray-900 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -191,6 +220,7 @@ export default function Contact() {
               )}
             </div>
 
+            {/* Right: Location + Business Hours */}
             <div className="space-y-8">
               <div className="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8 border-2 border-cyan-100">
                 <div className="flex items-start space-x-4 mb-6">
@@ -198,27 +228,36 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      Nature Hydrovation<br />
-                      Shop no:4, 1st floor, Door no:02-128/1/A<br />
-                      Union Bank Opp Building, Gajularamaram<br />
-                      Hyderabad, Telangana<br />
-                      India
-                    </p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Our Location
+                    </h3>
+                    <a
+                      href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 leading-relaxed hover:text-cyan-700 transition-colors"
+                    >
+                      Nature Hydrovation
+                      <br />
+                      Shop no:4, 1st floor, Door no:02-128/1/A
+                      <br />
+                      Union Bank Opp Building, Gajularamaram
+                      <br />
+                      Hyderabad, Telangana, India
+                    </a>
                   </div>
                 </div>
 
-               <div className="bg-white rounded-xl h-64 overflow-hidden border-2 border-gray-200">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!4v1761832072216!6m8!1m7!1s75YdgcBN5k9TI8YwCbk8GQ!2m2!1d17.52512465554164!2d78.42299460638385!3f218.35213727148806!4f18.394656038025303!5f0.7820865974627469" 
-                    className="w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
+                <div className="bg-white rounded-xl h-64 overflow-hidden border-2 border-gray-200">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!4v1761832072216!6m8!1m7!1s75YdgcBN5k9TI8YwCbk8GQ!2m2!1d17.52512465554164!2d78.42299460638385!3f218.35213727148806!4f18.394656038025303!5f0.7820865974627469"
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
@@ -227,21 +266,31 @@ export default function Contact() {
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Business Hours</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      Business Hours
+                    </h3>
                     <div className="space-y-3">
                       {businessHours.map((schedule, index) => (
-                        <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                          <span className="font-medium text-gray-700">{schedule.day}</span>
-                          <span className="text-cyan-600 font-semibold">{schedule.hours}</span>
+                        <div
+                          key={index}
+                          className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
+                        >
+                          <span className="font-medium text-gray-700">
+                            {schedule.day}
+                          </span>
+                          <span className="text-cyan-600 font-semibold">
+                            {schedule.hours}
+                          </span>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
                 <div className="bg-cyan-50 rounded-lg p-4 text-sm text-cyan-900">
-                  <strong>Note:</strong> Emergency support available 24/7 for existing customers
+                  <strong>Note:</strong> Emergency support available 24/7 for
+                  existing customers
                 </div>
-              </div> 
+              </div>
             </div>
           </div>
         </div>

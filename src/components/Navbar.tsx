@@ -1,6 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Droplet, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,25 +9,32 @@ export default function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/products', label: 'Products' },
-    { path: '/technology', label: 'Technology' },
-    { path: '/about', label: 'About Us' },
-    { path: '/blog', label: 'Blog' },
-    { path: '/contact', label: 'Contact' },
+    { path: "/", label: "Home" },
+    { path: "/products", label: "Products" },
+    { path: "/technology", label: "Technology" },
+    { path: "/about", label: "About Us" },
+    { path: "/blog", label: "Blog" },
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
     <nav className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">Nature Hydrovation</h1>
-              <p className="text-xs text-gray-600 tracking-wide">Mineral Rich Alkaline Water</p>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="flex justify-between items-center h-20 flex-wrap">
+          
+          {/* 🔹 Logo + Text + Tagline */}
+          <Link to="/" className="flex flex-col items-start space-y-1 group">
+            {/* Logo + Brand in one line */}
+            <div className="flex items-center space-x-2">
+              <img
+                src="/images/logo.png" // 👉 your logo path
+                alt="Nature Hydrovation Logo"
+                className="h-12 w-auto object-contain"
+              />
             </div>
           </Link>
 
+          {/* 🔹 Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
@@ -35,8 +42,8 @@ export default function Navbar() {
                 to={link.path}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive(link.path)
-                    ? 'bg-cyan-50 text-cyan-700'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-cyan-600'
+                    ? "bg-cyan-50 text-cyan-700"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-cyan-600"
                 }`}
               >
                 {link.label}
@@ -44,6 +51,7 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* 🔹 Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -53,6 +61,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* 🔹 Mobile Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-4 py-4 space-y-2">
@@ -63,8 +72,8 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                   isActive(link.path)
-                    ? 'bg-cyan-50 text-cyan-700'
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? "bg-cyan-50 text-cyan-700"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
                 {link.label}

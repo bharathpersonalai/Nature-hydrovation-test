@@ -204,19 +204,6 @@ export default function Technology() {
                 </div>
               ))}
             </div>
-
-            <div className="flex justify-center gap-2 mt-8">
-              {processSteps.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    activeStep === index ? 'bg-cyan-600' : 'bg-gray-300'
-                  }`}
-                  onClick={() => setActiveStep(index)}
-                  aria-label={`View step ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
         </section>
 

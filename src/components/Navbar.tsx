@@ -29,7 +29,7 @@ export default function Navbar() {
               <img
                 src="/images/fff.png" // 👉 your logo path
                 alt="Nature Hydrovation Logo"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
           </Link>

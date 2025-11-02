@@ -18,7 +18,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed w-full bg-white backdrop-blur-sm shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-20 flex-wrap">
           
@@ -27,7 +27,7 @@ export default function Navbar() {
             {/* Logo + Brand in one line */}
             <div className="flex items-center space-x-2">
               <img
-                src="/images/fl.png" // 👉 your logo path
+                src="/images/FF.png" // 👉 your logo path
                 alt="Nature Hydrovation Logo"
                 className="h-14 w-auto object-contain"
               />

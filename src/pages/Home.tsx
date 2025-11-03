@@ -278,8 +278,8 @@ export default function Home() {
           </div>
         </section>
         {/* About Section (Why Choose) */}       {" "}
-        <section
-          className="relative min-h-[95vh] py-24 px-4 sm:px-6 lg:px-8" /* <-- REMOVED scroll-animate */
+       <section
+  className="relative min-h-[95vh] py-16 px-4 sm:px-6 lg:px-8 -mt-10"
           style={{
             backgroundImage: `url('/images/about.jpg')`,
             backgroundSize: "cover",
@@ -291,8 +291,8 @@ export default function Home() {
            {" "}
           <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center">
                        {" "}
-            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-                            {/* Left content */}             {" "}
+            <div className="grid lg:grid-cols-1 gap-12 items-center w-full">
+        {/* Left content */}             {" "}
               <div>
                                {" "}
                 <h2 className="text-4xl font-bold text-white mb-6 scroll-animate">

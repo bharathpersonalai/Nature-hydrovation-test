@@ -214,74 +214,71 @@ const galleryItems = [
           </div>
         </section>
 
-        {/* Products Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-animate">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Our Solutions
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose from our range of certified water treatment systems
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {products.map((product, index) => (
-                <Link key={index} to={product.link} className="group">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="h-72 bg-gray-100">
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {product.title}
-                      </h3>
-                      <p className="text-gray-600">{product.description}</p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-{/* 🚀 NEW: GALLERY SECTION (Placed after "Our Solutions") 🚀 */}
-        <section
-  className="py-20 overflow-hidden scroll-animate relative" // Added 'relative'
+        {/* Combined Products + Gallery Section */}
+<section
+  className="py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative scroll-animate"
   style={{
-    backgroundImage: `url('/images/13.jpg')`, // Your image path
-    backgroundSize: 'cover', // Ensures image covers the section
-    backgroundPosition: 'center', // Centers the image
+    backgroundImage: `url('/images/w1.jpg')`, // or use a blended composite
   }}
 >
-  {/* Optional: Add an overlay for better text readability */}
-  <div className="absolute inset-0 bg-gray-900 opacity-60"></div> 
-  {/* All your existing content will go here, after the overlay */}
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/40"></div>
 
-  <div className="max-w-7xl mx-auto text-center mb-16 px-4 relative z-10"> {/* Added 'relative z-10' */}
-    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-      Our Gallery
-    </h2>
-    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-      Explore different styles for your home.
-    </p>
+  <div className="relative max-w-7xl mx-auto space-y-24">
+    {/* --- Our Solutions --- */}
+    <div className="text-center">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Our Solutions
+      </h2>
+      <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+        Choose from our range of certified water treatment systems
+      </p>
+    </div>
+
+    {/* Product cards */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map((product, index) => (
+        <Link key={index} to={product.link} className="group">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div className="h-72 bg-gray-100">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {product.title}
+              </h3>
+              <p className="text-gray-600">{product.description}</p>
+            </div>
+          </div>
+        </Link>
+      ))}
+    </div>
+
+    {/* --- Gallery --- */}
+    <div className="text-center mt-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Our Gallery
+      </h2>
+      <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-12">
+        Explore different styles for your home.
+      </p>
+
+      <CircularGallery
+        items={galleryItems}
+        bend={-10}
+        scrollSpeed={2}
+        scrollEase={0.05}
+        textColor={"#ffffff"}
+        borderRadius={0.05}
+      />
+    </div>
   </div>
-
-  {/* Your CircularGallery component */}
-  <CircularGallery
-    items={galleryItems}
-    bend={-10}
-    scrollSpeed={2}
-    scrollEase={0.05}
-    textColor={"#ffffff"}
-    borderRadius={0.05}
-  />
 </section>
-        {/* 🚀 END: GALLERY SECTION 🚀 */}
+
   
        {/* About Section (Why Choose) */}
         <section

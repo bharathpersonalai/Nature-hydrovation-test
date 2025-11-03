@@ -27,7 +27,7 @@ export default function Navbar() {
             {/* Logo + Brand in one line */}
             <div className="flex items-center space-x-2">
               <img
-                src="/images/fff.png" // 👉 your logo path
+                src="/images/fff.png" // 👉 your logo path 
                 alt="Nature Hydrovation Logo"
                 className="h-14 w-auto object-contain"
               />

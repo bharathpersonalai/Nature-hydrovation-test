@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <div className="flex flex-col items-start mb-4">
   <img
-    src="/images/nlogo.png" // 🟢 path to your logo file
+    src="/images/footer logo.png" // 🟢 path to your logo file
     alt="Nature Hydrovation Logo"
     className="h-16 w-auto object-contain" // adjust height as needed
   />

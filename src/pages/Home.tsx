@@ -216,7 +216,7 @@ export default function Home() {
         <section
           className="py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative scroll-animate"
           style={{
-            backgroundImage: `url('/images/w1.jpg')`, // or use a blended composite
+            backgroundImage: `url('/images/mobile.png')`, // or use a blended composite
           }}
         >
           {/* Overlay */}

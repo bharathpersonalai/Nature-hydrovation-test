@@ -35,7 +35,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-50 bg-transparent"
+    className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm"
+
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
@@ -44,7 +45,7 @@ export default function Navbar() {
           <Link to="/" className="flex flex-col items-start space-y-1 group">
             <div className="flex items-center space-x-2">
               <img
-                src="/images/fff.png"
+                src="/images/footer logo.png"
                 alt="Nature Hydrovation Logo"
                 className={`h-14 w-auto object-contain transition-opacity duration-300 ${
                   logoLoaded ? "opacity-100" : "opacity-0"

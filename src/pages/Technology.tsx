@@ -131,7 +131,7 @@ export default function Technology() {
         />
       </Helmet>
 
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen">
         {/* Hero Section */}
         <section 
           className="relative py-24 sm:py-32 lg:py-48 min-h-[50vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 text-white overflow-hidden flex items-center"

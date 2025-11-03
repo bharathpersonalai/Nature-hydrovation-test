@@ -63,7 +63,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
    {/* Hero Section */}
 <section
   className="relative h-[90vh] bg-cover bg-center bg-no-repeat"

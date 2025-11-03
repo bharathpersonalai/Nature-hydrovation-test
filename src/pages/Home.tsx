@@ -173,7 +173,7 @@ export default function Home() {
                         : ""
                     }`}
           style={{
-            backgroundImage: `url(/images/home.jpg)`,
+            backgroundImage: `url(/images/2.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
           }}

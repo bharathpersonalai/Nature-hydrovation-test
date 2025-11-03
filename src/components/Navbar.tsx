@@ -35,7 +35,7 @@ export default function Navbar() {
 
   return (
     <nav
-    className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm"
+    className="fixed w-full bg-white backdrop-blur-sm shadow-sm z-50"
 
       aria-label="Main navigation"
     >
@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link to="/" className="flex flex-col items-start space-y-1 group">
             <div className="flex items-center space-x-2">
               <img
-                src="/images/footer logo.png"
+                src="/images/nav logo.png"
                 alt="Nature Hydrovation Logo"
                 className={`h-14 w-auto object-contain transition-opacity duration-300 ${
                   logoLoaded ? "opacity-100" : "opacity-0"
@@ -65,7 +65,7 @@ export default function Navbar() {
                   ${
                     isActive(link.path)
                       ? "bg-cyan-50 text-cyan-700 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-cyan-600 after:transform after:scale-x-100 after:transition-transform"
-                      : "text-black-900 hover:bg-gray-50 hover:text-cyan-600 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-cyan-600 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+                      : "text-gray-900 hover:bg-gray-50 hover:text-cyan-600 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-cyan-600 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
                   }`}
               >
                 {link.label}

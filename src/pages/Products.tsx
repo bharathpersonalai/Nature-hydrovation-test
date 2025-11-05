@@ -22,7 +22,7 @@ export default function Products() {
     {
       id: "alkaline-purifier",
       name: "Alkaline Water Purifier",
-      imageUrl: "/images/ALK.png",
+      imageUrl: "/images/P1.jpg",
       gradient: "from-cyan-500 to-teal-600",
       tagline: "Transform ordinary water into wellness",
       description:
@@ -49,7 +49,7 @@ export default function Products() {
     {
       id: "ro-purifier",
       name: "RO Water Purifier",
-      imageUrl: "/images/RO2.png",
+      imageUrl: "/images/P2.jpg",
       gradient: "from-blue-500 to-cyan-600",
       tagline: "Advanced purification for every drop",
       description:

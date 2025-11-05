@@ -123,13 +123,13 @@ export default function Home() {
       title: "Alkaline Water Purifier",
       description:
         "Transform ordinary water into mineral-rich alkaline wellness water",
-      image: "/images/Alkaline.png",
+      image: "/images/H1.jpg",
       link: "/products#alkaline",
     },
     {
       title: "RO Water Purifier",
       description: "Advanced reverse osmosis with mineral retention technology",
-      image: "/images/k3.png",
+      image: "/images/H2.jpg",
       link: "/products#ro",
     },
     {

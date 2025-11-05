@@ -15,6 +15,7 @@ import {
   Filter,
   ArrowUp,
   ArrowRight,
+  ArrowLeftRight,
 } from "lucide-react";
 
 interface BenefitProps {
@@ -265,7 +266,6 @@ export default function Home() {
               <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-12">
                 Explore different styles for your home.
               </p>
-
               <CircularGallery
                 items={galleryItems}
                 bend={-10}
@@ -274,12 +274,18 @@ export default function Home() {
                 textColor={"#ffffff"}
                 borderRadius={0.05}
               />
+              {/* --- ADD THIS BLOCK --- */}
+              <div className="text-center text-gray-200 text-sm mt-6 relative z-10 flex items-center justify-center gap-2">
+                <ArrowLeftRight className="h-4 w-4" />
+                <span className="font-bold">Swipe to explore</span> 
+              </div>
+              {/* --- END OF BLOCK --- */}
             </div>
           </div>
         </section>
         {/* About Section (Why Choose) */}       {" "}
-       <section
-  className="relative min-h-[95vh] py-16 px-4 sm:px-6 lg:px-8 -mt-10"
+        <section
+          className="relative min-h-[95vh] py-16 px-4 sm:px-6 lg:px-8 -mt-10"
           style={{
             backgroundImage: `url('/images/about.jpg')`,
             backgroundSize: "cover",
@@ -292,7 +298,7 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center">
                        {" "}
             <div className="grid lg:grid-cols-1 gap-12 items-center w-full">
-        {/* Left content */}             {" "}
+                      {/* Left content */}             {" "}
               <div>
                                {" "}
                 <h2 className="text-4xl font-bold text-white mb-6 scroll-animate">

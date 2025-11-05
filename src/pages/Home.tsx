@@ -269,7 +269,7 @@ export default function Home() {
               <CircularGallery
                 items={galleryItems}
                 bend={-10}
-                scrollSpeed={2}
+                scrollSpeed={1}
                 scrollEase={0.05}
                 textColor={"#ffffff"}
                 borderRadius={0.05}

@@ -257,11 +257,11 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <Phone className="h-6 w-6" />
-                <a href="tel:+919999999999" className="text-lg hover:underline">+91 99999 99999</a>
+                <a href="tel:+917997261499" className="text-lg hover:underline">+91 79972 61499</a>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <Mail className="h-6 w-6" />
-                <a href="mailto:info@naturehydrovation.com" className="text-lg hover:underline">info@naturehydrovation.com</a>
+                <a href="mailto:naturehydrovation@gmail.com" className="text-lg hover:underline">naturehydrovation@gmail.com</a>
               </div>
             </div>
             <a

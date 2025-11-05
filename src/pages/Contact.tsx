@@ -103,10 +103,10 @@ ${formData.message}
         <section
           className="relative h-[90vh] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url("/images/cc.png")`, // your image path
+            backgroundImage: `url("/images/contact.jpg")`, // your image path
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div> {/* subtle dark overlay */}
+          <div className="absolute inset-0 bg-black/30"></div> {/* subtle dark overlay */} 
           
           <div className="relative flex items-center justify-start h-full px-12 md:px-24">
             <h1 className="text-white text-5xl md:text-6xl font-bold drop-shadow-lg">

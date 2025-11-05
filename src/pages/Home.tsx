@@ -46,27 +46,27 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const galleryItems = [
     {
-      image: "/images/test.png", // Replace with your image
+      image: "/images/GI.png", // Replace with your image
       text: "Our Technology",
     },
     {
-      image: "/images/test4.png", // Replace with your image
+      image: "/images/GI 2.png", // Replace with your image
       text: "Alkaline Purifier",
     },
     {
-      image: "/images/test2.png", // Replace with your image
+      image: "/images/GI 3.png", // Replace with your image
       text: "Alkaline Purifier",
     },
     {
-      image: "/images/test5.png", // Replace with your image
+      image: "/images/GI 4.png", // Replace with your image
       text: "Alkaline Purifier",
     },
     {
-      image: "/images/test3.png", // Replace with your image
+      image: "/images/GI 5.png", // Replace with your image
       text: "Alkaline Purifier",
     },
     {
-      image: "/images/test6.png", // Replace with your image
+      image: "/images/GI 6.png", // Replace with your image
       text: "Alkaline Purifier",
     },
     // ... add as many as you like
@@ -217,7 +217,7 @@ export default function Home() {
         <section
           className="py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative scroll-animate"
           style={{
-            backgroundImage: `url('/images/mobile.png')`, // or use a blended composite
+            backgroundImage: `url('/images/solutions.jpg')`, // or use a blended composite
           }}
         >
           {/* Overlay */}
@@ -271,7 +271,7 @@ export default function Home() {
                 bend={-10}
                 scrollSpeed={1}
                 scrollEase={0.05}
-                textColor={"#ffffff"}
+                textColor={"#ffffff"}   
                 borderRadius={0.05}
               />
               {/* --- ADD THIS BLOCK --- */}
@@ -293,7 +293,7 @@ export default function Home() {
           }}
         >
                     {/* Dark Overlay */}         {" "}
-          <div className="absolute inset-0 bg-gray-900 opacity-55"></div>       
+          <div className="absolute inset-0 bg-gray-900 opacity-40"></div>       
            {" "}
           <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center">
                        {" "}

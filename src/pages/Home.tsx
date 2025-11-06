@@ -46,7 +46,7 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const galleryItems = [
     {
-      image: "/images/GI.png", // Replace with your image
+      image: "/images/GI 1.png", // Replace with your image
       text: "Our Technology",
     },
     {
@@ -135,7 +135,7 @@ export default function Home() {
     {
       title: "Water Softener",
       description: "Whole-home solution for hard water problems",
-      image: "/images/poly.png",
+      image: "/images/H3.jpg",
       link: "/products#softener",
     },
   ];
@@ -180,7 +180,7 @@ export default function Home() {
           }}
         >
           <img
-            src="/images/home.jpg"
+            src="/images/home.jpg" 
             alt=""
             className="hidden"
             onLoad={() => setBgLoaded(true)}

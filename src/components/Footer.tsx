@@ -28,7 +28,7 @@ export default function Footer() {
 </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Trusted provider of alkaline water purifiers, RO systems, and
-              water softeners with volcanic stone technology.
+              water softeners with Japanese volcanic stone technology.
             </p>
           </div>
 

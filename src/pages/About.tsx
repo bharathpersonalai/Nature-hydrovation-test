@@ -54,29 +54,6 @@ export default function About() {
     },
   ];
 
-  const team = [
-    {
-      role: "Water Science Experts",
-      description:
-        "Specialists in alkaline water technology and mineral enrichment",
-    },
-    {
-      role: "Installation Technicians",
-      description:
-        "Certified professionals ensuring perfect setup in your home",
-    },
-    {
-      role: "Customer Support Team",
-      description:
-        "Available 24/7 to address all your water wellness questions",
-    },
-    {
-      role: "Quality Assurance",
-      description:
-        "Regular testing and maintenance to guarantee optimal performance",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* 🏞️ Consistent Hero Section with 'style' Prop */}
@@ -180,20 +157,29 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                <Target className="inline h-8 w-8 text-cyan-600 mr-2" />
-                Our Mission
-              </h3>
-              <p className="text-gray-700 leading-relaxed mb-6">
+              {/* Mission Section */}
+              <div className="flex items-center mb-6">
+                <img
+                  src="/images/mission.png" // your mission image with text included
+                  alt="Our Mission"
+                  className="h-24 w-auto object-contain"
+                />
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-10">
                 To revolutionize home water consumption by making premium
                 alkaline mineral water accessible and affordable. We believe
                 everyone deserves water that supports their health goals and
                 enhances their quality of life.
               </p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                <Award className="inline h-8 w-8 text-cyan-600 mr-2" />
-                Our Vision
-              </h3>
+
+              {/* Vision Section */}
+              <div className="flex items-center mb-6">
+                <img
+                  src="/images/vision.png" // your vision image with text included
+                  alt="Our Vision"
+                  className="h-24 w-auto object-contain"
+                />
+              </div>
               <p className="text-gray-700 leading-relaxed">
                 To be recognized as India's most trusted water wellness brand,
                 setting new standards in water purification technology while
@@ -207,15 +193,22 @@ export default function About() {
                 What Drives Us
               </h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                We're driven by the transformative stories of customers who've
-                experienced improved energy, better digestion, and enhanced
-                overall wellness after switching to our mineral-rich alkaline
-                water systems.
+                At Nature Hydrovation, we’re driven by a single purpose to
+                make alkaline, mineral-rich water a part of every healthy
+                household. Our advanced alkaline RO systems and Japanese media
+                alkaline filters are designed to do more than purify they
+                revitalize every drop with essential sea minerals and rare
+                volcanic stones, creating water that’s naturally balanced,
+                hydrogen-infused, and antioxidant-rich.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Every system we install, every filter we maintain, and every
-                customer we serve is part of our commitment to creating a
-                healthier, more vibrant community.
+                We believe wellness begins with hydration. Each system we
+                install and each filter we maintain reflects our commitment to
+                scientific precision, natural enhancement, and lasting health
+                impact. By combining cutting-edge Japanese filtration technology
+                with India’s growing awareness of mineral wellness, Nature
+                Hydrovation stands at the intersection of innovation, purity,
+                and purpose. 
               </p>
             </div>
           </div>
@@ -288,40 +281,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our Expert Team
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dedicated professionals committed to your water wellness journey
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="bg-gradient-to-br from-cyan-500 to-teal-600 p-3 rounded-lg">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {member.role}
-                    </h3>
-                    <p className="text-gray-600">{member.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-cyan-600 to-teal-700 rounded-2xl p-12 text-white text-center">
@@ -331,9 +290,22 @@ export default function About() {
             <div className="space-y-4 mb-8">
               <div className="flex items-center justify-center space-x-3">
                 <MapPin className="h-6 w-6" />
-                <p className="text-lg">
-                  Nature Hydrovation, Gajularamaram, Hyderabad, Telangana
-                </p>
+              </div>
+              <div>
+                <a
+                  href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white-700 leading-relaxed hover:text-cyan-700 transition-colors"
+                >
+                  Nature Hydrovation
+                  <br />
+                  Shop no:4, 1st floor, Door no:02-128/1/A
+                  <br />
+                  Union Bank Opp Building, Gajularamaram
+                  <br />
+                  Hyderabad, Telangana, India
+                </a>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <Phone className="h-6 w-6" />

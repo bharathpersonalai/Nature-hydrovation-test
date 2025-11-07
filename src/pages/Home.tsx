@@ -69,6 +69,10 @@ export default function Home() {
       image: "/images/GI 6.png", // Replace with your image
       text: "Alkaline Purifier",
     },
+     {
+      image: "/images/bench.png", // Replace with your image
+      text: "Alkaline Purifier",
+    },
     // ... add as many as you like
   ];
   useEffect(() => {
@@ -135,7 +139,7 @@ export default function Home() {
     {
       title: "Water Softener",
       description: "Whole-home solution for hard water problems",
-      image: "/images/H3.jpg",
+      image: "/images/H4.jpg",
       link: "/products#softener",
     },
   ];

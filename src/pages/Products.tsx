@@ -97,72 +97,94 @@ export default function Products() {
   ];
 
   return (
-    <div className="min-h-screen">
+  <div className="min-h-screen">
 
-      {/* ✅ Hero */}
-      <section
-        className="relative py-24 sm:py-32 lg:py-48 min-h-[50vh] lg:min-h-[70vh] text-white flex items-center px-6"
-        style={{
-          backgroundImage: "url(/images/6.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/30"></div>
+    {/* ✅ Hero Section */}
+    <section
+      className="relative py-24 sm:py-32 lg:py-48 min-h-[50vh] lg:min-h-[70vh] text-white flex items-center px-6"
+      style={{
+        backgroundImage: "url(/images/6.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/30"></div>
 
-        <div className="relative max-w-7xl mx-auto z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Our Water <span className="text-green-400">Treatment Systems</span>
-          </h1>
-          <p className="text-xl text-gray-200 max-w-2xl">
-            Premium systems engineered for healthy, scale-free & purified water at home.
-          </p>
-        </div>
-      </section>
+      <div className="relative max-w-7xl mx-auto z-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          Our Water <span className="text-green-400">Treatment Systems</span>
+        </h1>
+        <p className="text-xl text-gray-200 max-w-2xl">
+          Premium systems engineered for healthy, scale-free & purified water at home.
+        </p>
+      </div>
+    </section>
 
-      {products.map((product, index) => {
-        const isPoly = product.id === "polyphosphate-filter";
+    {products.map((product, index) => {
+      const isPoly = product.id === "polyphosphate-filter";
 
-        return (
-          <section
-            key={product.id}
-            className={`py-20 px-6 ${
-              index % 2 === 0 ? "bg-white" : "bg-gradient-to-br from-gray-50 to-cyan-50"
-            }`}
-          >
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
-
-              {/* ✅ LEFT SIDE */}
-              <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl mb-8">
-                  <img src={product.imageUrl} className="w-full h-full object-cover" />
-                </div>
-
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">{product.name}</h2>
-                <p className="text-xl text-gray-600 mb-4 italic">{product.tagline}</p>
-                <p className="text-gray-700 leading-relaxed mb-6">{product.description}</p>
-
-                {/* ✅ Show benefits ONLY if not polyphosphate */}
-                {!isPoly && (
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                      <Zap className="h-5 w-5 text-cyan-600 mr-2" />
-                      Key Benefits
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {product.benefits?.map((benefit, idx) => (
-                        <div key={idx} className="flex items-start space-x-2">
-                          <CheckCircle className="h-5 w-5 text-teal-600 mt-0.5" />
-                          <span className="text-sm text-gray-700">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+      return (
+        <section
+          key={product.id}
+          className={`py-20 px-6 ${
+            index % 2 === 0
+              ? "bg-white"
+              : "bg-gradient-to-br from-gray-50 to-cyan-50"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+            {/* ✅ LEFT SIDE */}
+            <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl mb-8">
+                <img
+                  src={product.imageUrl}
+                  className="w-full h-full object-cover"
+                  alt={product.name}
+                />
               </div>
 
-              {/* ✅ RIGHT SIDE */}
-              <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                {product.name}
+              </h2>
+              <p className="text-xl text-gray-600 mb-4 italic">
+                {product.tagline}
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                {product.description}
+              </p>
+
+              {!isPoly && (
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                    <Zap className="h-5 w-5 text-cyan-600 mr-2" />
+                    Key Benefits
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {product.benefits?.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-teal-600 mt-0.5" />
+                        <span className="text-sm text-gray-700">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* ✅ RIGHT SIDE */}
+            <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
+              {isPoly ? (
+                // ✅ Show single image for polyphosphate
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                  <img
+                    src="/images/prod3.jpg"
+                    alt="Polyphosphate System Overview"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                // ✅ Default layout for other products
                 <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
                     Technical Features
@@ -186,48 +208,47 @@ export default function Products() {
                       to="/contact"
                       className="block text-center px-6 py-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-white rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg"
                     >
-                      Request Consultation <ArrowRight className="inline ml-2 h-5 w-5" />
+                      Request Consultation{" "}
+                      <ArrowRight className="inline ml-2 h-5 w-5" />
                     </Link>
                   </div>
                 </div>
+              )}
+            </div>
+          </div>
 
-                {/* ✅ Polyphosphate — House diagram goes right below tech card */}
-                {isPoly && product.extraImages?.houseDiagram && (
-                  <div className="mt-8 rounded-xl overflow-hidden shadow-xl border border-gray-200">
-                    <img src={product.extraImages.houseDiagram} className="w-full h-full object-cover" />
-                  </div>
-                )}
+          {/* ✅ Polyphosphate usage strip stays same */}
+          {isPoly && product.extraImages?.usageIcons && (
+            <div className="mt-14 flex justify-center">
+              <div className="max-w-5xl w-full rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                <img
+                  src={product.extraImages.usageIcons}
+                  className="w-full object-contain"
+                  alt="Appliance usage"
+                />
               </div>
             </div>
+          )}
+        </section>
+      );
+    })}
 
-            {/* ✅ Polyphosphate — Full-width appliance usage strip */}
-            {isPoly && product.extraImages?.usageIcons && (
-              <div className="mt-14 flex justify-center">
-                <div className="max-w-5xl w-full rounded-xl overflow-hidden shadow-xl border border-gray-200">
-                  <img src={product.extraImages.usageIcons} className="w-full object-contain" />
-                </div>
-              </div>
-            )}
-          </section>
-        );
-      })}
+    {/* ✅ CTA */}
+    <section className="py-20 bg-gradient-to-br from-cyan-600 to-teal-700 text-white text-center px-6">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        Not Sure Which System is Right For You?
+      </h2>
+      <p className="text-lg mb-8 text-cyan-100">
+        Get a free water test & expert advice.
+      </p>
 
-      {/* ✅ CTA */}
-      <section className="py-20 bg-gradient-to-br from-cyan-600 to-teal-700 text-white text-center px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Not Sure Which System is Right For You?
-        </h2>
-        <p className="text-lg mb-8 text-cyan-100">
-          Get a free water test & expert advice.
-        </p>
-
-        <Link
-          to="/contact"
-          className="inline-block px-10 py-4 bg-white text-cyan-700 rounded-xl font-bold hover:scale-105 transition shadow-lg"
-        >
-          Book Free Consultation
-        </Link>
-      </section>
-    </div>
-  );
+      <Link
+        to="/contact"
+        className="inline-block px-10 py-4 bg-white text-cyan-700 rounded-xl font-bold hover:scale-105 transition shadow-lg"
+      >
+        Book Free Consultation
+      </Link>
+    </section>
+  </div>
+);
 }

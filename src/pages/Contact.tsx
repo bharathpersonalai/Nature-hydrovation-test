@@ -21,7 +21,7 @@ export default function Contact() {
     e.preventDefault();
 
     // This phone number is from your 'contactMethods' array
-    const phoneNumber = "917997261499"; 
+    const phoneNumber = "917997261499";
 
     // Create the message text from your form's state
     const messageText = `
@@ -42,7 +42,7 @@ ${formData.message}
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab
-    window.open(whatsappURL, '_blank');
+    window.open(whatsappURL, "_blank");
 
     // Show your "Thank You" message and clear the form
     setSubmitted(true);
@@ -81,7 +81,7 @@ ${formData.message}
       icon: <HiOutlineMail size={22} color="#fff" />,
       title: "Email Us",
       info: "naturehydrovation@gmail.com",
-      action: "mailto:naturehydrovation@gmail.com", 
+      action: "mailto:naturehydrovation@gmail.com",
       color: "#00bcd4",
     },
   ];
@@ -95,10 +95,13 @@ ${formData.message}
     <>
       <Helmet>
         <title>Contact Us | Nature Hydrovation</title>
-        <meta name="description" content="Get in touch with Nature Hydrovation for expert advice on water purification systems. Contact us for a free consultation." />
+        <meta
+          name="description"
+          content="Get in touch with Nature Hydrovation for expert advice on water purification systems. Contact us for a free consultation."
+        />
       </Helmet>
 
-      <div className="min-h-screen"> 
+      <div className="min-h-screen">
         {/* Hero Section */}
         <section
           className="relative h-[90vh] bg-cover bg-center bg-no-repeat"
@@ -106,8 +109,8 @@ ${formData.message}
             backgroundImage: `url("/images/contact.jpg")`, // your image path
           }}
         >
-          <div className="absolute inset-0 bg-black/30"></div> {/* subtle dark overlay */} 
-          
+          <div className="absolute inset-0 bg-black/30"></div>{" "}
+          {/* subtle dark overlay */}
           <div className="relative flex items-center justify-start h-full px-12 md:px-24">
             <h1 className="text-white text-5xl md:text-6xl font-bold drop-shadow-lg">
               We are here to Help
@@ -135,7 +138,9 @@ ${formData.message}
                     {method.icon}
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {method.title}
+                  </h3>
                   <p className="text-gray-600">{method.info}</p>
                 </a>
               ))}
@@ -149,8 +154,8 @@ ${formData.message}
                   Send Us a Message
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Fill out the form below and our water wellness experts will get
-                  back to you within 24 hours.
+                  Fill out the form below and our water wellness experts will
+                  get back to you within 24 hours.
                 </p>
 
                 {submitted ? (
@@ -253,41 +258,43 @@ ${formData.message}
               </div>
 
               {/* Right: Location + Business Hours */}
-             <div className="space-y-8">
-  <div className="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8 border-2 border-cyan-100">
-    <div className="flex items-start space-x-4 mb-6">
-      <div className="bg-gradient-to-br from-cyan-500 to-teal-600 p-3 rounded-lg">
-        <MapPin className="h-6 w-6 text-white" />
-      </div>
-      <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
-        <a
-          href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 leading-relaxed hover:text-cyan-700 transition-colors"
-        >
-          Nature Hydrovation
-          <br />
-          Shop no:4, 1st floor, Door no:02-128/1/A
-          <br />
-          Union Bank Opp Building, Gajularamaram
-          <br />
-          Hyderabad, Telangana, India
-        </a>
-      </div>
-    </div>
+              <div className="space-y-8">
+                <div className="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8 border-2 border-cyan-100">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="bg-gradient-to-br from-cyan-500 to-teal-600 p-3 rounded-lg">
+                      <MapPin className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        Our Location
+                      </h3>
+                      <a
+                        href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-700 leading-relaxed hover:text-cyan-700 transition-colors"
+                      >
+                        Nature Hydrovation
+                        <br />
+                        Shop no:4, 1st floor, Door no:02-128/1/A
+                        <br />
+                        Union Bank Opp Building, Gajularamaram
+                        <br />
+                        Hyderabad, Telangana, India
+                      </a>
+                    </div>
+                  </div>
 
-    {/* ✅ Replaced Google Map iframe with your static PNG image */}
-    <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200">
-      <img
-        src="/images/location.jpg" // <-- put your PNG image name/path here
-        alt="Nature Hydrovation Location"
-  className="w-full max-h-94 object-contain rounded-xl" 
-  loading="lazy"
-      />
-    </div> 
-  </div>
+                  {/* ✅ Replaced Google Map iframe with your static PNG image */}
+                  <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200">
+                    <img
+                      src="/images/location.jpg" // <-- put your PNG image name/path here
+                      alt="Nature Hydrovation Location"
+                      className="w-full max-h-94 object-contain rounded-xl"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
 
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                   <div className="flex items-start space-x-4 mb-6">

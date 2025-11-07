@@ -253,44 +253,41 @@ ${formData.message}
               </div>
 
               {/* Right: Location + Business Hours */}
-              <div className="space-y-8">
-                <div className="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8 border-2 border-cyan-100">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="bg-gradient-to-br from-cyan-500 to-teal-600 p-3 rounded-lg">
-                      <MapPin className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Our Location
-                      </h3>
-                      <a
-                        href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-700 leading-relaxed hover:text-cyan-700 transition-colors"
-                      >
-                        Nature Hydrovation
-                        <br />
-                        Shop no:4, 1st floor, Door no:02-128/1/A
-                        <br />
-                        Union Bank Opp Building, Gajularamaram
-                        <br />
-                        Hyderabad, Telangana, India
-                      </a>
-                    </div>
-                  </div>
+             <div className="space-y-8">
+  <div className="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8 border-2 border-cyan-100">
+    <div className="flex items-start space-x-4 mb-6">
+      <div className="bg-gradient-to-br from-cyan-500 to-teal-600 p-3 rounded-lg">
+        <MapPin className="h-6 w-6 text-white" />
+      </div>
+      <div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
+        <a
+          href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 leading-relaxed hover:text-cyan-700 transition-colors"
+        >
+          Nature Hydrovation
+          <br />
+          Shop no:4, 1st floor, Door no:02-128/1/A
+          <br />
+          Union Bank Opp Building, Gajularamaram
+          <br />
+          Hyderabad, Telangana, India
+        </a>
+      </div>
+    </div>
 
-                  <div className="bg-white rounded-xl h-64 overflow-hidden border-2 border-gray-200">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!4v1761832072216!6m8!1m7!1s75YdgcBN5k9TI8YwCbk8GQ!2m2!1d17.52512465554164!2d78.42299460638385!3f218.35213727148806!4f18.394656038025303!5f0.7820865974627469"
-                      className="w-full h-full"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                  </div>
-                </div>
+    {/* ✅ Replaced Google Map iframe with your static PNG image */}
+    <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200">
+      <img
+        src="/images/location.jpg" // <-- put your PNG image name/path here
+        alt="Nature Hydrovation Location"
+  className="w-full max-h-94 object-contain rounded-xl" 
+  loading="lazy"
+      />
+    </div> 
+  </div>
 
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                   <div className="flex items-start space-x-4 mb-6">

@@ -288,9 +288,9 @@ ${formData.message}
                   {/* ✅ Replaced Google Map iframe with your static PNG image */}
                   <div className="bg-white rounded-xl overflow-hidden border-2 border-gray-200">
                     <img
-                      src="/images/location.jpg" // <-- put your PNG image name/path here
+                      src="/images/map.jpg" // <-- put your PNG image name/path here
                       alt="Nature Hydrovation Location"
-                      className="w-full max-h-94 object-contain rounded-xl"
+                      className="w-full max-h-90 object-contain rounded-xl"
                       loading="lazy"
                     />
                   </div>

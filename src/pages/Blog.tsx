@@ -97,7 +97,7 @@ export default function Blog() {
         <img
           src="/images/blog.jpg"   // <-- replace with your image file name
           alt="Water Wellness Knowledge Hub"
-          className="w-full h-[70vh] object-cover"
+          className="w-full h-[50vh] object-cover" 
           loading="lazy"
         />
       </div>

@@ -47,7 +47,7 @@ export default function Home() {
   const galleryItems = [
     {
       image: "/images/GI 1.png", // Replace with your image
-      text: "Our Technology",
+      text: "Alkaline Bootles & Jugs",
     },
     {
       image: "/images/GI 2.png", // Replace with your image

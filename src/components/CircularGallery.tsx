@@ -144,7 +144,7 @@ export const CircularGallery = ({
                   style={{ color: textColor }}
                 >
                                     {item.text}
-                  NB             {" "}
+                             {" "}
                 </p>
                              {" "}
               </div>

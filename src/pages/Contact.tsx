@@ -290,7 +290,7 @@ ${formData.message}
                     <img
                       src="/images/map.jpg" // <-- put your PNG image name/path here
                       alt="Nature Hydrovation Location"
-                      className="w-full max-h-90 object-contain rounded-xl"
+                      className="w-full max-h-96 object-contain rounded-xl"
                       loading="lazy"
                     />
                   </div>

@@ -90,19 +90,19 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen pt-20">
-  <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-teal-50 to-blue-50">
-    <div className="max-w-7xl mx-auto">
-      {/* ✅ Hero Image Only */}
-      <div className="rounded-3xl overflow-hidden shadow-2xl border border-cyan-100">
-        <img
-          src="/images/blog.jpg"   // <-- replace with your image file name
-          alt="Water Wellness Knowledge Hub"
-          className="w-full h-[50vh] object-cover" 
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </section>
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-teal-50 to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          {/* ✅ Hero Image Only */}
+          <div className="rounded-3xl overflow-hidden shadow-2xl border border-cyan-100">
+            <img
+              src="/images/blog.jpg" // <-- replace with your image file name
+              alt="Water Wellness Knowledge Hub"
+              className="w-full h-[50vh] object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -223,7 +223,7 @@ export default function Blog() {
               </h3>
               <p className="text-gray-600 mb-4">
                 Make informed decisions with our comprehensive comparisons and
-                expert recommendations. 
+                expert recommendations.
               </p>
               <button
                 onClick={() => alert("Coming Soon!")}

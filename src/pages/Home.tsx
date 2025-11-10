@@ -73,6 +73,14 @@ export default function Home() {
       image: "/images/bench.png", // Replace with your image
       text: "Alkaline Purifier",
     },
+    {
+      image: "/images/GI 7.jpg", // Replace with your image
+      text: "Alkaline Purifier",
+    },
+    {
+      image: "/images/GI 8.jpg", // Replace with your image
+      text: "Alkaline Purifier",
+    },
     // ... add as many as you like
   ];
   useEffect(() => {

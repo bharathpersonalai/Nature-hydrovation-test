@@ -8,11 +8,14 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import ScrollToTop from "./components/ScrollToTop"; 
+import PopupBanner from "./components/PopupBanner";
 
 function App() {
   return (
     <Router>
       <ScrollToTop /> 
+      {/* <-- 2. ADD THIS LINE HERE */}
+      <PopupBanner />
       <div className="min-h-screen bg-white"> 
         <Navbar />
         <Routes>

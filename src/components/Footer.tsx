@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import { X, Youtube } from "lucide-react";
+import { X, Youtube, ExternalLink } from "lucide-react";
 import {
   Droplet,
   Phone,
@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
-  const [showCertificate, setShowCertificate] = useState(false); // ✅ properly typed
+  const [showCertificate, setShowCertificate] = useState(false);
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300">
@@ -21,9 +21,9 @@ export default function Footer() {
           <div>
             <div className="flex flex-col items-start mb-4">
               <img
-                src="/images/footer logo.png" // 🟢 path to your logo file
+                src="/images/footer logo.png"
                 alt="Nature Hydrovation Logo"
-                className="h-16 w-auto object-contain" // adjust height as needed
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -91,7 +91,6 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-cyan-400 mt-1 flex-shrink-0" />
-                {/* --- THIS IS THE NEW LINK --- */}
                 <a
                   href="https://maps.app.goo.gl/DU8XcxSLHQyfy2z16"
                   target="_blank"
@@ -133,7 +132,6 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-3 mb-4">
-              {/* --- Facebook Link --- */}
               <a
                 href="https://www.facebook.com/share/19MsJRushh/"
                 target="_blank"
@@ -144,7 +142,6 @@ export default function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
 
-              {/* --- Instagram Link --- */}
               <a
                 href="https://www.instagram.com/nature_hydrovation?igsh=MXI3bWZxc2ZyYTB0bg=="
                 target="_blank"
@@ -155,7 +152,6 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
 
-              {/* --- Youtube Link --- */}
               <a
                 href="https://www.youtube.com/@naturehydrovation"
                 target="_blank"
@@ -166,7 +162,6 @@ export default function Footer() {
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
-            {/* 🔹 GST Number - Clickable */}
             <button
               onClick={() => setShowCertificate(true)}
               className="text-white font-bold text-sm mt-2 underline hover:text-cyan-400 transition"
@@ -177,25 +172,40 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-gray-700 pt-8 text-center">
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Nature Hydrovation. All rights
-            reserved.
+        <div className="border-t border-gray-700 pt-8">
+          {/* Copyright */}
+          <p className="text-sm text-gray-400 text-center mb-3">
+            © {new Date().getFullYear()} Nature Hydrovation. All rights reserved.
           </p>
+          
+          {/* Developer Credit */}
+          <div className="flex items-center justify-center">
+            <p className="text-sm text-gray-500">
+              Designed & Developed by{" "}
+              <a
+                href="https://smartgenai.co.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-semibold hover:text-cyan-400 transition-colors inline-flex items-center gap-1"
+              >
+                SmartgenAI Innovations
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* 🔹 GST Certificate Modal */}
+      {/* GST Certificate Modal */}
       {showCertificate && (
         <div
           className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
-          onClick={() => setShowCertificate(false)} // ✅ Close when clicking outside
+          onClick={() => setShowCertificate(false)}
         >
           <div
             className="relative bg-white rounded-xl shadow-2xl p-6 max-w-md w-full mx-4"
-            onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               onClick={() => setShowCertificate(false)}
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
